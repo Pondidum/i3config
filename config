@@ -208,6 +208,7 @@ bar {
 
 exec_always xinput set-prop "SYNA2393:00 06CB:7A13 Touchpad" "Synaptics Tap Action" -1
 exec_always xinput set-prop "SYNA2393:00 06CB:7A13 Touchpad" "Synaptics Scrolling Distance" -30 -30
+exec_always synclient MaxTapTime=0
 
 exec gnome-keyring-daemon --start --components=pkcs11,secrets,ssh
 
