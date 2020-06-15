@@ -25,11 +25,13 @@ format = "{barchart}"
 [[block]]
 block = "net"
 device = "wlp59s0"
+ssid = true
 signal_strength = true
 ip = true
 
 [[block]]
 block = "sound"
+on_click = "pavucontrol"
 
 [[block]]
 block = "battery"
