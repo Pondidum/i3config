@@ -8,4 +8,8 @@ if ! [ -e "$lockscreen" ]; then
     convert -scale "$dimensions" "$image" "$lockscreen"
 fi
 
-i3lock -i "$lockscreen"
+python3 "$HOME/.config/i3/kb.py" lock || true
+
+i3lock -i "$lockscreen" -n
+
+python3 "$HOME/.config/i3/kb.py" unlock || true
