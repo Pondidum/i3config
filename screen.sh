@@ -28,10 +28,16 @@ elif [ "$mode" = "external" ]; then
     --output "$external_output" --auto
   message="External Display Only"
 
-elif [ "$mode" = "extend" ]; then
+elif [ "$mode" = "extend-r" ]; then
   xrandr \
     --output "$internal_output" --auto \
     --output "$external_output" --auto --right-of "$internal_output"
+  message="Extending to External Display"
+
+elif [ "$mode" = "extend-l" ]; then
+  xrandr \
+    --output "$internal_output" --auto \
+    --output "$external_output" --auto --left-of "$internal_output"
   message="Extending to External Display"
 
 elif [ "$mode" = "clone" ]; then

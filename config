@@ -190,12 +190,13 @@ mode "$keyboard_layout" {
 bindsym $mod+k mode "$keyboard_layout"
 
 # display mode switching
-set $screens Screen Mode: (F1) Laptop Only, (F2) External Only, (F3) Extend, (F4) Clone
+set $screens Screen Mode: (F1) Laptop Only, (F2) External Only, (F3) Extend-Left, (F4) Extend-Right, (F5) Clone
 mode "$screens" {
     bindsym F1 exec --no-startup-id ~/.config/i3/screen.sh "internal", mode "default"
     bindsym F2 exec --no-startup-id ~/.config/i3/screen.sh "external", mode "default"
-    bindsym F3 exec --no-startup-id ~/.config/i3/screen.sh "extend", mode "default"
-    bindsym F4 exec --no-startup-id ~/.config/i3/screen.sh "clone", mode "default"
+    bindsym F3 exec --no-startup-id ~/.config/i3/screen.sh "extend-l", mode "default"
+    bindsym F4 exec --no-startup-id ~/.config/i3/screen.sh "extend-r", mode "default"
+    bindsym F5 exec --no-startup-id ~/.config/i3/screen.sh "clone", mode "default"
 
     bindsym Escape mode "default"
 }
