@@ -34,6 +34,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 
 # lock session
 bindsym $mod+l exec ~/.config/i3/lock.sh
+bindsym $mod+Shift+l exec ~/.config/i3/suspend.sh
 
 # kill focused window
 bindsym $mod+Shift+q kill
