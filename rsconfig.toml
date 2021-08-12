@@ -1,15 +1,15 @@
-theme = "plain"
 icons = "awesome"
+theme = "nord-dark"
 
 [[block]]
-block = "disk_space"
-path = "/"
-alias = "/"
-info_type = "available"
-unit = "GB"
-interval = 20
-warning = 20.0
 alert = 10.0
+alias = "/"
+block = "disk_space"
+info_type = "available"
+interval = 20
+path = "/"
+unit = "GB"
+warning = 20.0
 
 [[block]]
 block = "memory"
@@ -19,15 +19,15 @@ format_swap = "{SUp}%"
 
 [[block]]
 block = "cpu"
-interval = 1
 format = "{barchart}"
+interval = 1
 
 [[block]]
 block = "net"
 device = "wlp59s0"
-ssid = true
-signal_strength = true
 ip = true
+signal_strength = true
+ssid = true
 
 [[block]]
 block = "sound"
@@ -35,16 +35,16 @@ on_click = "pavucontrol"
 
 [[block]]
 block = "battery"
-interval = 10
 format = "{percentage}% {time}"
+interval = 10
 
 [[block]]
 block = "backlight"
 
 [[block]]
 block = "time"
-interval = 60
 format = "%a %d/%m %R"
+interval = 60
 
 [[block]]
 block = "keyboard_layout"
