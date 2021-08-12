@@ -10,6 +10,6 @@ fi
 
 python3 "$HOME/.config/i3/kb.py" lock || true
 
-i3lock -i "$lockscreen" -n
+i3lock -i "$lockscreen" -n -t
 
 python3 "$HOME/.config/i3/kb.py" unlock || true
