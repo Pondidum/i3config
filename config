@@ -32,6 +32,9 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
+# launch 1password
+bindsym $mod+p exec 1password
+
 # lock session
 bindsym $mod+l exec ~/.config/i3/lock.sh
 bindsym $mod+Shift+l exec ~/.config/i3/suspend.sh
@@ -216,6 +219,7 @@ exec gnome-keyring-daemon --start --components=pkcs11,secrets,ssh
 
 exec nm-applet
 exec blueman-applet
-exec env KEYBASE_AUTOSTART=1 run_keybase
+exec owncloud
+exec 1password --silent
 
 exec_always alttab
