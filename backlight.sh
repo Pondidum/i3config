@@ -1,14 +1,16 @@
 #!/bin/bash
 
-action=${1:-inc}
+readonly SCRIPT_DIR="$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)"
+
+action=${1:-"+"}
 amount=${2:-"10"}
 
-xbacklight -"$action" "$amount"
+value=$(brightnessctl --machine-readable s "${amount}%${action}" \
+  | cut -d "," -f 4 \
+  | sed 's/%//g')
 
-current="$(xbacklight -get)"
-
-notify-send.sh \
+"$SCRIPT_DIR/notify-send.sh" \
   --replace-file=/tmp/backlight.notify \
-  --hint="int:value:${current%.*}" \
+  --hint="int:value:${value%.*}" \
   --icon="video-display" \
   "Brightness"

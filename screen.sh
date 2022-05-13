@@ -1,12 +1,14 @@
 #!/bin/sh
 
+readonly SCRIPT_DIR="$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)"
+
 mode=${1:-internal}
 
-internal_output="eDP1"
+internal_output="eDP-1"
 external_output=$(xrandr \
   | grep ' connected ' \
   | sed 's/^\(.*\) connected.*/\1/g' \
-  | grep -v eDP1 \
+  | grep -v "$internal_output" \
   | tail -1)
 
 
@@ -47,7 +49,7 @@ elif [ "$mode" = "clone" ]; then
   message="Cloning to External Display"
 fi
 
-notify-send.sh \
+"$SCRIPT_DIR/notify-send.sh" \
   --replace-file=/tmp/screens.notify \
   --icon=video-display \
   "Display Output Changed" \

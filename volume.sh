@@ -1,4 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env sh
+
+readonly SCRIPT_DIR="$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)"
 
 mode=${1:-toggle}
 amount=${2:-"5%"}
@@ -14,10 +16,10 @@ echo "    Sink:   $sink"
 if [ "$mode" = "toggle" ]; then
   pactl set-sink-mute "$sink" toggle
 
-elif [ "$mode" == "raise" ]; then
+elif [ "$mode" = "raise" ]; then
   pactl set-sink-volume "$sink" "+$amount"
 
-elif [ "$mode" == "lower" ]; then
+elif [ "$mode" = "lower" ]; then
   pactl set-sink-volume "$sink" "-$amount"
 
 fi
@@ -41,7 +43,7 @@ elif [ "$volume" -gt 66 ]; then
 
 fi
 
-notify-send.sh \
+"$SCRIPT_DIR/notify-send.sh" \
   --replace-file=/tmp/volume.notify \
   --hint="int:value:$volume" \
   --icon="$icon" \

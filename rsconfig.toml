@@ -14,8 +14,8 @@ warning = 20.0
 [[block]]
 block = "memory"
 display_type = "memory"
-format_mem = "{Mup}%"
-format_swap = "{SUp}%"
+format_mem = "{mem_used_percents}%"
+format_swap = "{swap_used_percents}%"
 
 [[block]]
 block = "cpu"
@@ -24,10 +24,8 @@ interval = 1
 
 [[block]]
 block = "net"
-device = "wlp59s0"
-ip = true
-signal_strength = true
-ssid = true
+device = "wlp170s0"
+format = "{ssid} {ip} {speed_up;K} {speed_down;K}"
 
 [[block]]
 block = "sound"

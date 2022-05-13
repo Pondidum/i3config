@@ -137,8 +137,8 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # Screen brightness controls
-bindsym XF86MonBrightnessUp exec --no-startup-id ~/.config/i3/backlight.sh "inc"
-bindsym XF86MonBrightnessDown exec --no-startup-id ~/.config/i3/backlight.sh "dec"
+bindsym XF86MonBrightnessUp exec --no-startup-id ~/.config/i3/backlight.sh "+"
+bindsym XF86MonBrightnessDown exec --no-startup-id ~/.config/i3/backlight.sh "-"
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -209,11 +209,20 @@ bindsym $mod+F1 mode "$screens"
 bar {
     font pango:DejaVu Sans Mono, FontAwesome 8
     status_command i3status-rs .config/i3/rsconfig.toml
+
+    colors {
+        background #2e3440
+    }
+
+    # disable mousewheel
+    bindsym button4 nop
+    bindsym button5 nop
+
 }
 
-exec_always xinput set-prop "SYNA2393:00 06CB:7A13 Touchpad" "Synaptics Tap Action" -1
-exec_always xinput set-prop "SYNA2393:00 06CB:7A13 Touchpad" "Synaptics Scrolling Distance" -30 -30
-exec_always synclient MaxTapTime=0
+exec_always xinput set-prop "PIXA3854:00 093A:0274 Touchpad" "Synaptics Tap Action" -1
+exec_always xinput set-prop "PIXA3854:00 093A:0274 Touchpad" "Synaptics Scrolling Distance" -30 -30
+# exec_always synclient MaxTapTime=0
 
 exec gnome-keyring-daemon --start --components=pkcs11,secrets,ssh
 

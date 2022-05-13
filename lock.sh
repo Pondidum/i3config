@@ -4,12 +4,8 @@ dimensions=$(xdpyinfo | awk '/dimensions/{print $2}')
 lockscreen="$HOME/.config/i3/img/$dimensions.png"
 
 if ! [ -e "$lockscreen" ]; then
-    image="$HOME/.config/i3/img/source.png"
+    image="$HOME/.config/i3/img/source.jpg"
     convert -scale "$dimensions" "$image" "$lockscreen"
 fi
 
-python3 "$HOME/.config/i3/kb.py" lock || true
-
 i3lock -i "$lockscreen" -n -t
-
-python3 "$HOME/.config/i3/kb.py" unlock || true
