@@ -1,51 +1,49 @@
-icons = "awesome5"
+[icons]
+icons = "awesome4"
+
+[theme]
 theme = "nord-dark"
 
+
 [[block]]
-alert = 10.0
-alias = "/"
+block = "music"
+player = "spotify"
+
+[[block]]
 block = "disk_space"
+alert = 10.0
 info_type = "available"
 interval = 20
 path = "/"
-unit = "GB"
-warning = 20.0
 
 [[block]]
 block = "memory"
-display_type = "memory"
-format_mem = "{mem_used_percents}%"
-format_swap = "{swap_used_percents}%"
 
 [[block]]
 block = "cpu"
-format = "{barchart}"
+format = "$icon $barchart $utilization"
 interval = 1
 
 [[block]]
 block = "bluetooth"
 mac = "AC:1D:06:4C:19:FA"
-format = "Airpods {percentage}"
-hide_disconnected = true
 
 [[block]]
 block = "bluetooth"
 mac = "2C:41:A1:CB:1A:84"
-format = "Aphrael {percentage}"
-hide_disconnected = true
 
 [[block]]
 block = "net"
 device = "wlp170s0"
-format = "{ssid} {ip} {speed_up;K} {speed_down;K}"
+format = "$ssid $ip ^icon_net_down $speed_up.eng(prefix:K) ^icon_net_up $speed_down.eng(prefix:K)"
+missing_format = "Disconnected"
 
 [[block]]
 block = "sound"
-on_click = "pavucontrol"
 
 [[block]]
 block = "battery"
-format = "{percentage}% {time}"
+format = "$icon $percentage% $time "
 interval = 10
 
 [[block]]
@@ -53,10 +51,9 @@ block = "backlight"
 
 [[block]]
 block = "time"
-format = "%a %d/%m %R"
 interval = 60
 
 [[block]]
 block = "keyboard_layout"
 driver = "setxkbmap"
-interval = 15
+interval = 5

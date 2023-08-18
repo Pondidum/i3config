@@ -208,7 +208,7 @@ bindsym $mod+F1 mode "$screens"
 
 bar {
     font pango:Iosevka, FontAwesome 10
-    status_command i3status-rs .config/i3/rsconfig.toml
+    status_command ~/.local/share/cargo/bin/i3status-rs ~/.config/i3/rsconfig.toml
 
     colors {
         background #2e3440
