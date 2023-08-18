@@ -32,8 +32,11 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
+# this is fn+F9
+bindsym $mod+p exec autorandr --change
+
 # launch 1password
-bindsym $mod+p exec 1password
+bindsym $mod+Shift+p exec 1password
 
 # lock session
 bindsym $mod+l exec ~/.config/i3/lock.sh
