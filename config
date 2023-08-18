@@ -226,6 +226,7 @@ exec_always syndaemon -i 0.5 -t -K -R   # disable track pad while typing
 
 exec gnome-keyring-daemon --start --components=pkcs11,secrets,ssh
 
+exec  --no-startup-id lxpolkit
 exec nm-applet
 exec blueman-applet
 exec owncloud
