@@ -4,7 +4,7 @@ readonly SCRIPT_DIR="$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)"
 
 mode=${1:-internal}
 
-internal_output="eDP-1"
+internal_output="eDP1"
 external_output=$(xrandr \
   | grep ' connected ' \
   | sed 's/^\(.*\) connected.*/\1/g' \
