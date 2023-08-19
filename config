@@ -172,6 +172,16 @@ bindsym $mod+mod1+Down resize grow height 10 px or 10 ppt
 bindsym $mod+mod1+Up resize shrink height 10 px or 10 ppt
 bindsym $mod+mod1+Right resize grow width 10 px or 10 ppt
 
+
+mode "move" {
+    bindsym Left  move workspace to output left,  mode default
+    bindsym Right move workspace to output right, mode default
+    bindsym Up    move workspace to output up,    mode default
+    bindsym Down  move workspace to output down,  mode default
+}
+
+bindsym $mod+Shift+m mode "move"
+
 # disable mousewheel
 bindsym button4 nop
 bindsym button5 nop
