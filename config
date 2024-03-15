@@ -190,6 +190,7 @@ bindsym button5 nop
 
 # screenshots
 bindsym Print exec flameshot gui
+bindsym Shift+Print exec ~/.config/i3/ocr.sh
 
 # keyboard language
 set $keyboard_layout Keyboard Layout: (e) en-gb, (f) fi-fi
