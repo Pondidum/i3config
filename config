@@ -233,7 +233,7 @@ bar {
 
 exec_always xinput set-prop "PIXA3854:00 093A:0274 Touchpad" "Synaptics Tap Action" -1
 exec_always xinput set-prop "PIXA3854:00 093A:0274 Touchpad" "Synaptics Scrolling Distance" -30 -30
-exec_always syndaemon -i 0.5 -t -K -R   # disable track pad while typing
+exec syndaemon -i 0.5 -t -K -R   # disable track pad while typing
 
 exec gnome-keyring-daemon --start --components=pkcs11,secrets,ssh
 
