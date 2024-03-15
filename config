@@ -178,6 +178,8 @@ mode "move" {
     bindsym Right move workspace to output right, mode default
     bindsym Up    move workspace to output up,    mode default
     bindsym Down  move workspace to output down,  mode default
+
+    bindsym Escape mode "default"
 }
 
 bindsym $mod+Shift+m mode "move"
