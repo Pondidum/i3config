@@ -39,6 +39,17 @@ format = "$ssid $ip ^icon_net_down $speed_up.eng(prefix:K) ^icon_net_up $speed_d
 missing_format = "Disconnected"
 
 [[block]]
+block = "vpn"
+driver = "mullvad"
+format_connected = " $flag"
+format_disconnected = " $icon"
+
+[[block]]
+block = "custom"
+command = ''' tailscale status --json | jq '.Self | if .Online then { state: "Good", text: "tailscale up" } else { state: "Idle", text: "tailscale down" } end ' '''
+json = true
+
+[[block]]
 block = "sound"
 
 [[block]]
