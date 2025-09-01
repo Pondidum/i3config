@@ -1,0 +1,12 @@
+[Unit]
+Description=i3lock
+Before=sleep.target suspend.target
+
+[Service]
+User=andy
+Environment=DISPLAY=:0
+ExecStart=/home/andy/.config/i3/lock.sh
+
+[Install]
+WantedBy=sleep.target suspend.target
+

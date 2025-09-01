@@ -34,7 +34,7 @@ mac = "2C:41:A1:CB:1A:84"
 
 [[block]]
 block = "net"
-device = "wlp170s0"
+device = "wlp1s0"
 format = "$ssid $ip ^icon_net_down $speed_up.eng(prefix:K) ^icon_net_up $speed_down.eng(prefix:K)"
 missing_format = "Disconnected"
 
@@ -43,7 +43,7 @@ block = "sound"
 
 [[block]]
 block = "battery"
-format = "$icon $percentage% $time "
+format = "$icon $percentage "
 interval = 10
 
 [[block]]
