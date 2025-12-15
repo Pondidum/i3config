@@ -1,11 +1,10 @@
 #!/bin/bash
 
-dimensions=$(xdpyinfo | awk '/dimensions/{print $2}')
-lockscreen="$HOME/.config/i3/img/$dimensions.png"
+screenshot="/tmp/screenshot.png"
+lockscreen="/tmp/screenshot.blurred.png"
 
-if ! [ -e "$lockscreen" ]; then
-    image="$HOME/.config/i3/img/source.jpg"
-    convert -scale "$dimensions" "$image" "$lockscreen"
-fi
+rm -f "$screenshot"
+flameshot full --path "/tmp/screenshot.png"
+convert -scale 10% -blur 0x0.5 -resize 1000% "$screenshot" "$lockscreen"
 
 i3lock -i "$lockscreen" -n -t
