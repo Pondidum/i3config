@@ -30,6 +30,10 @@ mac = "AC:1D:06:4C:19:FA"
 
 [[block]]
 block = "bluetooth"
+mac = "BC:87:FA:BE:D2:9B"
+
+[[block]]
+block = "bluetooth"
 mac = "2C:41:A1:CB:1A:84"
 
 [[block]]
